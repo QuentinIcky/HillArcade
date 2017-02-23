@@ -2,7 +2,7 @@
 
   try{
 
-    $mysqli = new PDO('mysql:host=mysql.hostinger.fr;dbname=u255681172_score;', 'u255681172_hill', 'team2017');
+    $mysqli = new PDO('mysql:host=mysql.hostinger.fr;dbname=u380330818_score;', 'u380330818_team', 'Hillarcade2017');
     // $mysqli = new PDO('mysql:host=localhost;dbname=score;', 'root', '');
 
   }
