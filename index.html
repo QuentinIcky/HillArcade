@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hill'arcade</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="dest/css/style.min.css" />
+    <link rel="icon" href="dest/img/favicon.png" type="image/png">
+</head>
+<body>
+    <div class="wrapper">
+        <section class="home" id="home">
+            <div class="home_block left">
+                <div class="highscore">
+                    
+                </div>
+                <span class="cupContent">
+                	<!-- <img src="dest/img/cup.png" alt="cup" id="cup"/> -->
+                </span>
+                <a class="termsLink" href="terms.html">Terms and Conditions</a>
+            </div>
+            <div class="home_block right">
+                <div class="trump">
+                    <div class="home_block_txtContent">
+                        <h1 class="wow slideInDown"><strong>Hill'</strong>Arcade</h1>
+                        <p class="wow slideInRight">
+                            <strong>Welcome to you Hillary !</strong><br/>
+							The race for the presidency has already started and your opponents have taken a lead !<br/><br/>
+							You will have to prove that you have the shoulders to lead a country like the United States.<br/>
+							Your mission is to make the highest score in the three next levels to beat your opponents.<br/>
+							<strong class="margin">Good Luck !</strong>
+                        </p>
+                        <a class="wow btn slideInUp" href="story1.html">Start !</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="dest/js/lib/wow.js"></script>
+<script type="text/javascript" src="dest/js/script.js"></script>
+<script type="text/javascript">
+window.onload = function() {
+
+	let xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            let data = JSON.parse(this.responseText);
+            	console.log(data);
+            	console.log(this.responseText);
+             
+                let container = window.document.getElementsByClassName('highscore')[0];
+                let dataLength = data.length;
+                for ( let i = 0; i < dataLength; i++){
+
+
+                  container.innerHTML += '<div class="score"><span>' + ( i + 1 ) + '</span><span>' + data[i].name + '</span><span>' + data[i].date +'</span><span>'+ data[i].score+'</span></div>';
+
+
+                }
+      
+	       }
+	  };
+
+	xmlhttp.open("GET", "score.php");
+	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	xmlhttp.send();
+}
+
+
+
+</script>
+</html>

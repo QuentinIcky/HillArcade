@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>Hill'arcade</title>
+	    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	    <link rel="icon" href="dest/img/favicon.png" type="image/png">
+	    <link rel="stylesheet" type="text/css" href="dest/css/style.min.css">	
+	</head>
+
+	<body>
+		<div id="overlay">
+            <img class="loader" src="dest/img/LoadingDots.gif">
+            <img class="hubert" src="dest/img/LoadingHubert.gif">
+        </div>
+	</body>
+	<script src="dest/js/lib/phaser.min.js"></script>
+	<script src="dest/js/level2/level2.js"></script>
+	<script type="text/javascript">
+
+		window.onload = function() { 
+
+			window.document.getElementById('overlay').style.display = 'none';
+		
+		}
+
+	</script>
+</html>
