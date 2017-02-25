@@ -16,15 +16,36 @@
 					<h1><span>Game</span> Over</h1>
 					<p>You didn't succeed to pass this step, you're now out of elections !</p>
 					<span class="score"></span>
-					<form action="">
-						<input id="name" type="text" placeholder="Add your name ..."/>
-						<a id="submit" class="btn submit">Submit</a>
-					</form>
+						<div class="shareContent">
+							<form action="">
+								<input id="name" type="text" placeholder="Add your name ..."/>
+								<a id="submit" class="btn submit">Submit</a>
+							</form>
+							<div class="fb-share-button" data-href="https://www.facebook.com/HillArcade-221607751646098/" data-layout="button" data-mobile-iframe="true">
+								<a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FHillArcade-221607751646098%2F&amp;src=sdkpreparse">
+									Partager
+								</a>
+							</div>
+						</div>
 					<span class="btn tryAgain" id="tryAgain" >Try again</span>
 				</section>
 			</section>
 		</div>
+		<div id="fb-root"></div>
+		
+		<!-- Facebook -->
+		<script>
+			(function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) return;
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.8";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 	</body>
+	
+
 	<script type="text/javascript">
 
 	window.onload = function() { 

@@ -1,5 +1,26 @@
-var game = new Phaser.Game(window.innerWidth, window.innerHeight, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
+var gameWidth = window.innerWidth;
+var gameHeight = window.innerHeight;
+
+console.log(gameWidth);
+
+var game = new Phaser.Game('100%', '100%', Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
 // var game = new Phaser.Game(1680, 926, Phaser.AUTO, '', { preload: preload, create: create, update: update, render: render });
+
+// if (game.device.desktop) {
+//     game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
+//     game.scale.pageAlignHorizontally = true;
+//     game.scale.pageAlignVertically = true;
+// }   else {    
+//     game.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+//     // game.scale.forceOrientation(false, true, 'orientation.png');
+// }
+// this.scale.setScreenSize(true);
+
+console.log(game.device)
+console.log(game.device.chrome)
+
+
+
 
 let previousScore;
 
@@ -62,7 +83,7 @@ function create() {
 
     // MUSIQUE
     mainSong = game.add.audio('mainSongLvl1');
-    mainSong.play();
+    // mainSong.play();
     yes = game.add.audio('yes');
     crie = game.add.audio('crie');
     mute = game.input.keyboard.addKey(Phaser.Keyboard.M);
@@ -72,7 +93,7 @@ function create() {
     littleCloud.scale.setTo(0.5);
 
     // Ajout sprite voitures
-    CarsSprite = game.add.tileSprite(0, game.height-250, 12000, 80, 'voiture');
+    CarsSprite = game.add.tileSprite(0, game.world.height - 200, 12000, 80, 'voiture');
     CarsSprite.scale.setTo(1);
     
     platforms = game.add.group();

@@ -1,6 +1,6 @@
 console.log('in level 2 - play');
 
-var level2 = new Phaser.Game(window.innerWidth * window.devicePixelRatio, window.innerHeight * window.devicePixelRatio, Phaser.AUTO, '', {
+var level2 = new Phaser.Game(window.innerWidth , window.innerHeight , Phaser.AUTO, '', {
     preload: preload,
     create: create,
     update: update,
@@ -38,7 +38,6 @@ function preload() {
 
     level2.load.audio('emailKilled', 'sounds/emailKilled.mp3');
     level2.load.audio('copsSound', 'sounds/copsSound.mp3');
-    // level2.load.audio('explo', 'sounds/explo.wav');
     level2.load.audio('mainSong', ['sounds/song_level_2.mp3','sounds/song_level_2.ogg']);
 
 }
@@ -174,6 +173,7 @@ function create() {
     blockRight = level2.add.sprite(window.innerWidth, 0, 'blockRight');
     blockRight.height = level2.height;
     blockRight.width = 400;
+    // blockRight.width = level2.world.width - blockRight.width;
     blockRight.enableBody = true;
     blockRight.physicsBodyType = Phaser.Physics.ARCADE;
     blockRight.name = 'blockRight';
@@ -229,7 +229,7 @@ function create() {
 
     //Add music 
     music = level2.add.audio('mainSong');
-    music.play();
+    // music.play();
 
     mute = level2.input.keyboard.addKey(Phaser.Keyboard.M);
     cursors = level2.input.keyboard.createCursorKeys();
